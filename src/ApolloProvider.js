@@ -8,7 +8,7 @@ import { setContext } from 'apollo-link-context';
 import App from "./App";
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:5000',
+  uri: process.env.NODE_ENV === 'production' ? 'https://polar-ocean-23136.herokuapp.com/' : 'http://localhost:5000',
 });
 
 const authContext = setContext(() => {
